@@ -5,11 +5,11 @@ package student {
     class Greeter {
         - name: String
         - locality: int
-        - <i>localityList: List<String>
-        - <i>HAWAII: int
-        - <i>CHINA: int
-        - <i>ITALY: int
-        - <i>DEFAULT_LOCALITY: int
+        - <i>localityList</i>: List<String>
+        - <i>HAWAII</i>: int
+        - <i>CHINA</i>: int
+        - <i>ITALY</i>: int
+        - <i>DEFAULT_LOCALITY</i>: int
 
         + getName(): String
         + getLocality(): int
@@ -23,8 +23,8 @@ package student {
     }
 
     class ConsoleView {
-        - <i>LOCALITY_OPTIONS: List<String>
-        - <i>SCANNER: Scanner
+        - <i>LOCALITY_OPTIONS</i>: List<String>
+        - <i>SCANNER</i>: Scanner
         + getName(): String
         + getLocality(): int
         + checkRunAgain(): boolean
