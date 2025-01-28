@@ -62,8 +62,29 @@ These questions require deeper thinking of the topic. We don't expect 100% corre
 
 
 2. Right now, the application isn't very dynamic in that it can be difficult to add new languages and greetings without modifying the code every time. Just thinking programmatically,  how could you make the application more dynamic? You are free to reference Geeting.java and how that could be used in your design.
-   *  We could set an “other” option in getLocality() method in ConsoleView class, when users choose the option, their locality is DEFAULT_LOCALITY. And a method named greetingOtherLanguage(), getGreeting() and getFormat() should be added to ConsoleView class. The parameter in constructor of greeting class should be name, greeting, formatStr. And change the method getFormatStr() to return String.format(this.formatStr, this.greeting).
-   *  After the first greeting, call greetingOtherLanguage() method in ConsoleView class, asking the users if they want to be greeted in other language. If the method returns yes, then call getGreeting() method and getFormat() method in ConsoleView class to get the greeting word in other language and greeting format the users prefer. And then creates a new instance of greeting class(greeting(name, greeting, format)), and then execute ConsoleView.printGreeting(String.format(greeting.getFormatStr(), name))).
+   *  To make the application more dynamic, methods named greetingOtherLanguage(), getGreeting() and getFormat() should be added to ConsoleView class. Also, methods named setGreeting() and setFormatStr()should be added to Greeting class.
+   *  After the first greeting, create a new instance of greeting with locality and greeter.getLocalityString(). Then call greetingOtherLanguage() method in ConsoleView class, asking the users if they want to be greeted in other language. If the method returns yes, then call getGreeting() method and getFormatStr() method in ConsoleView class to get the greeting word in other language and greeting format the users prefer. 
+   *  And then use setGreeting() and setFormatStr() methods in greeting class to update the parameter of instance. Finally, execute ConsoleView.printGreeting(String.format(greeting.getFormatStr(), name)).
+
+The code might like this:
+    
+    public static void main(String[] args) {
+       String name = ConsoleView.getName();
+       int locality = ConsoleView.getLocality();
+       Greeter greeter = new Greeter(name, locality);
+       Greeting greeting = new Greeting(locality, greeter.getLocalityString())
+       ConsoleView.printGreeting(greeter.greet());
+   
+       while (ConsoleView. greetingOtherLanguage()) {
+           String greeting = ConsoleView.getGreeting();
+           String format = ConsoleView.getFormatStr();
+           greeting.setGreeting(greeting);
+           greeting.setFormatStr(format);
+           ConsoleView.printGreeting(String.format(greeting.getFormatStr(),       
+           name))
+       }
+    }
+   
 
 
 > [!IMPORTANT]
