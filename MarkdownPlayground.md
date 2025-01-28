@@ -21,3 +21,21 @@ Mermaid is a markdown language that allows you to create diagrams. You can find 
 
 <!-- start your playground code under this dashed line -->
 ----
+**Markdown Playground**
+___
+
+    
+***Class Diagram*** 
+***
+
+```mermaid
+classDiagram
+    class ConsoleView {
+    - LOCALITY_OPTIONS: List<String>
+    + getName()String
+    + getLocality()int
+    + checkRunAgain()boolean
+    + printGreeting(greeting: String)void
+    }
+
+

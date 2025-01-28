@@ -1,0 +1,43 @@
+@startuml
+skinparam classAttributeIconSize 0
+title Aloha World UML
+package student {
+    class Greeter {
+        - name: String
+        - locality: int
+        - <i>localityList: List<String>
+        - <i>HAWAII: int
+        - <i>CHINA: int
+        - <i>ITALY: int
+        - <i>DEFAULT_LOCALITY: int
+
+        + getName(): String
+        + getLocality(): int
+        + setLocality(locality: int): void
+        + greet(): String
+        + greet(asciiOnly: boolean): String
+        + hashCode(): int
+        + equals(obj: Object): boolean
+        + toString(): String
+        + getLocalityList(): List<String>
+    }
+
+    class ConsoleView {
+        - <i>LOCALITY_OPTIONS: List<String>
+        - <i>SCANNER: Scanner
+        + getName(): String
+        + getLocality(): int
+        + checkRunAgain(): boolean
+        + printGreeting(greeting: String): void
+    }
+
+    class AlohaWorld {
+        + main(args: String[]): void
+    }
+}
+
+
+AlohaWorld --> Greeter
+AlohaWorld --> ConsoleView : uses
+ConsoleView --> Greeter : uses
+@enduml
