@@ -21,7 +21,8 @@ Mermaid is a markdown language that allows you to create diagrams. You can find 
 
 <!-- start your playground code under this dashed line -->
 ----
-**Markdown Playground**
+**Markdown Playground**  
+<ins>Markdown Playground </ins>
 ___
 
     
